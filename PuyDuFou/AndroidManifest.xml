@@ -110,6 +110,11 @@
             android:name="fr.exia.puydufou.activity.PhotoActivity"
             android:label="@string/title_activity_photo" >
         </activity>
+        <provider
+         android:name="fr.exia.puydufou.provider.ParcContentProvider"
+         android:authorities="fr.exia.puydufou.provider.parccontentprovider"
+        />
+        
     </application>
 
 </manifest>

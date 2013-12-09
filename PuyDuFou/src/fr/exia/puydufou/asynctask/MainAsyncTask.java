@@ -42,19 +42,14 @@ public class MainAsyncTask extends AsyncTask<Object, String, Integer> {
 		
 		if(isOnline()){
 			publishProgress("10");
-			if(this.datasLoadable.isReachableWebservice())
-			{
-				
-			}
-			else
-			{
-				return 2;
-			}
-				while(true){
-				}
+			this.datasLoadable.getAndStoreParcInformation(mainActivity.getContentResolver());
+			publishProgress("20");
+			
+			
 		}else{
 			return 1;
 		}
+		return 0;
 	}
 	
 	@Override
@@ -65,9 +60,6 @@ public class MainAsyncTask extends AsyncTask<Object, String, Integer> {
 		switch (result) {
 		case 1:
 			Toast.makeText(mainActivity, "Pas de connection internet.", Toast.LENGTH_LONG).show();
-			break;
-		case 2:
-			Toast.makeText(mainActivity, "Pas d'access au serveur distant.", Toast.LENGTH_LONG).show();
 			break;
 		default:
 			Toast.makeText(mainActivity, "Données vérifiées.", Toast.LENGTH_SHORT).show();

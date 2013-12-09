@@ -1,6 +1,9 @@
 package fr.exia.puydufou.core;
 
+import android.content.ContentResolver;
+
 public interface DatasLoadable {
 
-	public boolean isReachableWebservice();
+	public void getAndStoreParcInformation(ContentResolver contentResolver);
+	
 }
