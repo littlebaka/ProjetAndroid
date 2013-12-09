@@ -2,7 +2,18 @@
 <resources>
 
     <string name="app_name">Puy du fou</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Paramètres</string>
     <string name="hello_world">Hello world!</string>
+    <string name="button_map">Carte</string>
+    <string name="mapKey">AIzaSyAZrZU8sJ8QVRxkifAwTUyZk18iCofxaa8</string>
+    <string name="title_activity_show_list">Liste des spectacles</string>
+    <string name="title_activity_show">Information spectacle</string>
+    <string name="title_activity_shop_list">Liste des boutiques</string>
+    <string name="title_activity_shop">Information boutique</string>
+    <string name="title_activity_planning">Planning</string>
+    <string name="title_activity_restaurants_list">Liste des restaurants</string>
+    <string name="title_activity_restaurant">Information restaurant</string>
+    <string name="title_activity_social">SocialActivity</string>
+    <string name="title_activity_photo">PhotoActivity</string>
 
 </resources>
