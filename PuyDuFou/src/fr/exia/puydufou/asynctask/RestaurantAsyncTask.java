@@ -18,10 +18,12 @@ public class RestaurantAsyncTask extends AsyncTask<String, String, String> {
 	private List<Map<String, String>> menu;
 	private ListView listView;
 	private Context context;
+	private TextView textViewDescription;
 
-	public RestaurantAsyncTask(Context context,ListView listView){
+	public RestaurantAsyncTask(Context context,ListView listView, TextView textViewDescription){
 		this.context = context;
 		this.listView = listView;
+		this.textViewDescription = textViewDescription;
 	}
 	
 	@Override
@@ -53,10 +55,12 @@ public class RestaurantAsyncTask extends AsyncTask<String, String, String> {
 		
 		ListAdapter adapter = new SimpleAdapter(context,
 				menu, R.layout.show_list_item, new String[] { "menuRestaurant", "menuPrice" },
-				new int[] { R.id.show_name });
+				new int[] { R.id.show_name,  R.id.show_duration });
 		
 		listView.setAdapter(adapter);
-
+		
+		String menuDescription ="Le menu enfant comporte des dhfudfhduhfifi et des crocette";
+		textViewDescription.setText(menuDescription);
 		super.onPostExecute(result);
 	}
 

@@ -10,33 +10,17 @@
         android:layout_height="80dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true" >
+        <TextView android:id="@+id/noterestau" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/note" android:textAppearance="?android:attr/textAppearanceSmall" android:textSize="20sp"/>
+        <RatingBar android:id="@+id/noteetoilerestau" style="@style/AppBaseTheme" android:layout_width="wrap_content" android:layout_height="wrap_content" android:numStars="5"/>
+        <RatingBar android:id="@+id/noteetoilerestau" style="@style/AppBaseTheme" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
     </FrameLayout>
-
-    <TextView
-        android:id="@+id/noterestau"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/imgrestau"
-        android:text="@string/note"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="20sp" />
-
-    <RatingBar
-        android:id="@+id/noteetoilerestau"
-        style="@style/AppBaseTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/noterestau"
-        android:numStars="5" />
 
     <TextView
         android:id="@+id/menurestau"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/noteetoilerestau"
+        android:layout_below="@+id/imgrestau"
         android:text="@string/menu"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textSize="20sp" />
@@ -49,24 +33,6 @@
         android:layout_below="@+id/menurestau"
         android:text=""
         android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/descrestau"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/menurestaudesc"
-        android:text="@string/description"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/descrestaudesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/descrestau"
-        android:text="" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -106,5 +72,33 @@
             android:layout_height="wrap_content"
             android:background="@drawable/social" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/descrestau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/menurestaudesc"
+        android:layout_marginTop="16dp"
+        android:text="@string/description"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/descrestaudesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/descrestau"
+        android:layout_below="@+id/descrestau" />
+
+    <TextView
+        android:id="@+id/textViewLocalisation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/descrestaudesc"
+        android:layout_below="@+id/descrestaudesc"
+        android:layout_marginTop="15dp"
+        android:text="@string/activity_restaurant" />
+
 
 </RelativeLayout>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class RestaurantActivity extends Activity {
 
@@ -14,7 +15,7 @@ public class RestaurantActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_restaurant);
 		
-		RestaurantAsyncTask restaurantAsyncTask = new RestaurantAsyncTask(this,(ListView) findViewById(R.id.menurestaudesc));
+		RestaurantAsyncTask restaurantAsyncTask = new RestaurantAsyncTask(this,(ListView) findViewById(R.id.menurestaudesc), (TextView)findViewById(R.id.descrestaudesc));
 		restaurantAsyncTask.execute();
 	}
 
