@@ -41,7 +41,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textSize="20sp" />
 
-    <TextView
+    <ListView
         android:id="@+id/menurestaudesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

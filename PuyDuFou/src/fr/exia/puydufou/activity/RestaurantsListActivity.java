@@ -1,6 +1,7 @@
 package fr.exia.puydufou.activity;
 
 import fr.exia.puydufou.R;
+import fr.exia.puydufou.asynctask.RestaurantsListAsyncTask;
 import fr.exia.puydufou.main.MainActivity;
 import android.os.Bundle;
 import android.app.Activity;
@@ -17,18 +18,17 @@ import android.support.v4.widget.DrawerLayout;
 
 public class RestaurantsListActivity extends Activity {
 	
-	private String[] ItemsList;
-	private ListView myList;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_restaurants_list);
 		// Show the Up button in the action bar.
-		ItemsList = getResources().getStringArray(R.array.items);
-		myList = (ListView) findViewById(R.id.listerestau);
-		myList.setAdapter(new ArrayAdapter<String>(this, R.layout.listrestaurant, ItemsList));
-		myList.setOnItemClickListener(new ItemClickListener());
+		RestaurantsListAsyncTask restaurantsListAsyncTask = new RestaurantsListAsyncTask(this,(ListView)findViewById(R.id.listerestau));
+		
+		restaurantsListAsyncTask.execute();
+
 		setupActionBar();
 	}
 

@@ -1,9 +1,11 @@
 package fr.exia.puydufou.activity;
 
 import fr.exia.puydufou.R;
+import fr.exia.puydufou.asynctask.RestaurantAsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.widget.ListView;
 
 public class RestaurantActivity extends Activity {
 
@@ -11,6 +13,9 @@ public class RestaurantActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_restaurant);
+		
+		RestaurantAsyncTask restaurantAsyncTask = new RestaurantAsyncTask(this,(ListView) findViewById(R.id.menurestaudesc));
+		restaurantAsyncTask.execute();
 	}
 
 	@Override
