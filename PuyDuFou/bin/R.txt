@@ -67,9 +67,8 @@ int drawable planning 0x7f020021
 int drawable programme 0x7f020022
 int drawable restaurant 0x7f020023
 int drawable social 0x7f020024
-int id LinearLayout1 0x7f050039
 int id RelativeLayout1 0x7f050035
-int id action_settings 0x7f05003a
+int id action_settings 0x7f05003b
 int id activity_map 0x7f05000b
 int id actspec 0x7f05002e
 int id actspecnb 0x7f05002f
@@ -125,6 +124,8 @@ int id show_duration 0x7f050037
 int id show_list 0x7f050034
 int id show_name 0x7f050036
 int id show_schedule 0x7f050038
+int id show_schedule_linearLayout 0x7f050039
+int id show_schedule_textView 0x7f05003a
 int id terrain 0x7f050003
 int integer google_play_services_version 0x7f070000
 int layout activity_main 0x7f030000
@@ -140,6 +141,7 @@ int layout activity_show_list 0x7f030009
 int layout activity_social 0x7f03000a
 int layout listrestaurant 0x7f03000b
 int layout show_list_item 0x7f03000c
+int layout show_schedule_list 0x7f03000d
 int menu main 0x7f0b0000
 int menu photo 0x7f0b0001
 int menu planning 0x7f0b0002

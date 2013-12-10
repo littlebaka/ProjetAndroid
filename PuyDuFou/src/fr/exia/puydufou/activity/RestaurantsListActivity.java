@@ -12,9 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.support.v4.app.NavUtils;
-import android.support.v4.widget.DrawerLayout;
 
 public class RestaurantsListActivity extends Activity {
 	
@@ -66,12 +64,15 @@ public class RestaurantsListActivity extends Activity {
 	}
 	
 	private class ItemClickListener implements ListView.OnItemClickListener {
+		
+		
+		
     	@Override
     	public void onItemClick(AdapterView<?> adapter, View v, int pos, long id) {
+    		
     		//String clickedItem = (String) adapter.getAdapter().getItem(pos);
-    		//RestaurantActivity.setTitle(clickedItem);
-    		Intent intent_social = new Intent(RestaurantsListActivity.this, RestaurantActivity.class);
-			startActivity(intent_social);
+    		Intent intent_restau = new Intent(RestaurantsListActivity.this, RestaurantActivity.class);
+			startActivity(intent_restau);
     	}
     }
 

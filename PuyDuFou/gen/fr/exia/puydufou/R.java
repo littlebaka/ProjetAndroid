@@ -220,9 +220,8 @@ containing a value of this type.
         public static final int social=0x7f020024;
     }
     public static final class id {
-        public static final int LinearLayout1=0x7f050039;
         public static final int RelativeLayout1=0x7f050035;
-        public static final int action_settings=0x7f05003a;
+        public static final int action_settings=0x7f05003b;
         public static final int activity_map=0x7f05000b;
         public static final int actspec=0x7f05002e;
         public static final int actspecnb=0x7f05002f;
@@ -278,6 +277,8 @@ containing a value of this type.
         public static final int show_list=0x7f050034;
         public static final int show_name=0x7f050036;
         public static final int show_schedule=0x7f050038;
+        public static final int show_schedule_linearLayout=0x7f050039;
+        public static final int show_schedule_textView=0x7f05003a;
         public static final int terrain=0x7f050003;
     }
     public static final class integer {
@@ -297,6 +298,7 @@ containing a value of this type.
         public static final int activity_social=0x7f03000a;
         public static final int listrestaurant=0x7f03000b;
         public static final int show_list_item=0x7f03000c;
+        public static final int show_schedule_list=0x7f03000d;
     }
     public static final class menu {
         public static final int main=0x7f0b0000;
