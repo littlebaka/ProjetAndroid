@@ -43,27 +43,20 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textSize="20sp" />
 
-    <HorizontalScrollView
-        android:id="@+id/horairespecdesc"
+<HorizontalScrollView 
+            android:id="@+id/horairespecdesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/horairesspec"
-        android:textSize="18sp" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-        </LinearLayout>
-
-    </HorizontalScrollView>
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/ddcspec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/horairespecdesc"
+        android:layout_below="@+id/horairesspec"
         android:text="@string/ddc"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textSize="20sp" />
