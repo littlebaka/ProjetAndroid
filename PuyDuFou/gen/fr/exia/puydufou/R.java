@@ -8,6 +8,9 @@
 package fr.exia.puydufou;
 
 public final class R {
+    public static final class array {
+        public static final int items=0x7f080000;
+    }
     public static final class attr {
         /** 
     The size of the ad. It must be one of BANNER, FULL_BANNER, LEADERBOARD,
@@ -174,8 +177,8 @@ containing a value of this type.
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f080000;
-        public static final int activity_vertical_margin=0x7f080001;
+        public static final int activity_horizontal_margin=0x7f090000;
+        public static final int activity_vertical_margin=0x7f090001;
     }
     public static final class drawable {
         public static final int add_list=0x7f020000;
@@ -292,19 +295,20 @@ containing a value of this type.
         public static final int activity_show=0x7f030008;
         public static final int activity_show_list=0x7f030009;
         public static final int activity_social=0x7f03000a;
-        public static final int show_list_item=0x7f03000b;
+        public static final int listrestaurant=0x7f03000b;
+        public static final int show_list_item=0x7f03000c;
     }
     public static final class menu {
-        public static final int main=0x7f0a0000;
-        public static final int photo=0x7f0a0001;
-        public static final int planning=0x7f0a0002;
-        public static final int restaurant=0x7f0a0003;
-        public static final int restaurants_list=0x7f0a0004;
-        public static final int shop=0x7f0a0005;
-        public static final int shop_list=0x7f0a0006;
-        public static final int show=0x7f0a0007;
-        public static final int show_list=0x7f0a0008;
-        public static final int social=0x7f0a0009;
+        public static final int main=0x7f0b0000;
+        public static final int photo=0x7f0b0001;
+        public static final int planning=0x7f0b0002;
+        public static final int restaurant=0x7f0b0003;
+        public static final int restaurants_list=0x7f0b0004;
+        public static final int shop=0x7f0b0005;
+        public static final int shop_list=0x7f0b0006;
+        public static final int show=0x7f0b0007;
+        public static final int show_list=0x7f0b0008;
+        public static final int social=0x7f0b0009;
     }
     public static final class string {
         public static final int action_settings=0x7f06001b;
@@ -447,11 +451,11 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f090000;
+        public static final int AppBaseTheme=0x7f0a0000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f090001;
+        public static final int AppTheme=0x7f0a0001;
     }
     public static final class styleable {
         /** Attributes that can be used with a AdsAttrs.
