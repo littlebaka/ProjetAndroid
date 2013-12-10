@@ -4,135 +4,147 @@
     android:layout_height="match_parent"
     tools:context=".ShowActivity" >
 
-    <FrameLayout
-        android:id="@+id/imgspec"
-        android:layout_width="250dp"
-        android:layout_height="80dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/imgajoutplanning" >
-
-    </FrameLayout>
-
-    <TextView
-        android:id="@+id/notespec"
+    <ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/imgspec"
-        android:text="@string/note"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="20sp" />
+        android:layout_alignParentTop="true" >
 
-    <RatingBar
-        android:id="@+id/noteetoilespec"
-        style="@style/AppBaseTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/notespec"
-        android:numStars="5" />
+        <RelativeLayout
+            android:id="@+id/RelativeLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="505dp" >
 
-    <TextView
-        android:id="@+id/horairesspec"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/noteetoilespec"
-        android:text="@string/horaires"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="20sp" />
+            <FrameLayout
+                android:id="@+id/imgspec"
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true" >
+            </FrameLayout>
 
-<HorizontalScrollView 
-            android:id="@+id/horairespecdesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/horairesspec"
-        android:textSize="18sp" />
+            <Button
+                android:id="@+id/imgajoutplanning"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_alignBottom="@+id/imgspec"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/add_list"
+                android:src="@drawable/add_list" />
 
-    <TextView
-        android:id="@+id/ddcspec"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/horairesspec"
-        android:text="@string/ddc"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/notespec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/imgspec"
+                android:text="@string/note"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/ddcspecddc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/ddcspec" />
+            <RatingBar
+                android:id="@+id/noteetoilespec"
+                style="@style/AppBaseTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/notespec"
+                android:numStars="5" />
 
-    <Button
-        android:id="@+id/imgajoutplanning"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:layout_alignBottom="@+id/imgspec"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/add_list"
-        android:src="@drawable/add_list" />
+            <TextView
+                android:id="@+id/horairesspec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/noteetoilespec"
+                android:text="@string/horaires"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/actspec"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/ddcspecddc"
-        android:text="@string/actspec"
-        android:textSize="20sp" />
+            <HorizontalScrollView
+                android:id="@+id/horairespecdesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/horairesspec"
+                android:textSize="18sp" >
+            </HorizontalScrollView>
 
-    <TextView
-        android:id="@+id/actspecnb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/actspec"
-        android:text=""
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/ddcspec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/horairespecdesc"
+                android:layout_marginTop="12dp"
+                android:text="@string/ddc"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/duree"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/actspecnb"
-        android:text="@string/duree"
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/ddcspecddc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/ddcspec" />
 
-    <TextView
-        android:id="@+id/dureenb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/duree"
-        android:text="" 
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/duree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/ddcspecddc"
+                android:layout_marginTop="14dp"
+                android:text="@string/duree"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/descspec"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/dureenb"
-        android:layout_alignParentLeft="true"
-        android:text="@string/description"
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/dureenb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/duree" />
 
-    <TextView
-        android:id="@+id/descspecdesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:text="" 
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/actspec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/dureenb"
+                android:layout_marginTop="16dp"
+                android:text="@string/actspec"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/actspecnb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/actspec" />
+
+            <TextView
+                android:id="@+id/descspec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/actspecnb"
+                android:layout_marginTop="11dp"
+                android:text="@string/description"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/descspecdesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/descspec" />
+        </RelativeLayout>
+    </ScrollView>
 
     <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
