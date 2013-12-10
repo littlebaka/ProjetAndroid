@@ -43,7 +43,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textSize="20sp" />
 
-    <TextView
+    <HorizontalScrollView
         android:id="@+id/horairespecdesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
