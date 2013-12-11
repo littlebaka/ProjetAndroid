@@ -1,19 +1,30 @@
 package fr.exia.puydufou.activity;
 
+import java.util.List;
+import java.util.Map;
+
 import fr.exia.puydufou.R;
+import fr.exia.puydufou.asynctask.ShowsListAsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 
-public class ShowsListActivity extends Activity {
 
+
+public class ShowsListActivity extends Activity {
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_show_list);
 		// Show the Up button in the action bar.
+		ShowsListAsyncTask showListAsyncTask = new ShowsListAsyncTask(this,(ListView) findViewById(R.id.show_list));
+		showListAsyncTask.execute();
+		
 		setupActionBar();
 	}
 

@@ -15,5 +15,15 @@
     <string name="title_activity_restaurant">Information restaurant</string>
     <string name="title_activity_social">SocialActivity</string>
     <string name="title_activity_photo">PhotoActivity</string>
-
+    <string name="note">Note :</string>
+    <string name="menu">Menu et tarifs :</string>
+    <string name="description">Description :</string>
+    <string name="planning">Mon planning</string>
+    <string name="ajoutspec">Ajouter un spectacle</string>
+    <string name="horaires">Horaires :</string>
+    <string name="ddc">Date de création :</string>
+    <string name="actspec">Acteurs :</string>
+    <string name="duree">Durée :</string>
+    <string name="activity_restaurant">Localisation :</string>
+    <color name="white">#FFFFFF</color> 
 </resources>

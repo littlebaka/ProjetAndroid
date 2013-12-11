@@ -1,19 +1,32 @@
 package fr.exia.puydufou.activity;
 
 import fr.exia.puydufou.R;
+import fr.exia.puydufou.asynctask.RestaurantsListAsyncTask;
+import fr.exia.puydufou.main.MainActivity;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.support.v4.app.NavUtils;
 
 public class RestaurantsListActivity extends Activity {
+	
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_restaurants_list);
 		// Show the Up button in the action bar.
+		RestaurantsListAsyncTask restaurantsListAsyncTask = new RestaurantsListAsyncTask(this,(ListView)findViewById(R.id.listerestau));
+		
+		restaurantsListAsyncTask.execute();
+
 		setupActionBar();
 	}
 
@@ -49,5 +62,18 @@ public class RestaurantsListActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
+	private class ItemClickListener implements ListView.OnItemClickListener {
+		
+		
+		
+    	@Override
+    	public void onItemClick(AdapterView<?> adapter, View v, int pos, long id) {
+    		
+    		//String clickedItem = (String) adapter.getAdapter().getItem(pos);
+    		Intent intent_restau = new Intent(RestaurantsListActivity.this, RestaurantActivity.class);
+			startActivity(intent_restau);
+    	}
+    }
 
 }
