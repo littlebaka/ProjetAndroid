@@ -14,7 +14,8 @@
         <RelativeLayout
             android:id="@+id/RelativeLayout1"
             android:layout_width="wrap_content"
-            android:layout_height="505dp" >
+            android:layout_height="505dp"
+            android:paddingLeft="10dp" >
 
             <FrameLayout
                 android:id="@+id/imgspec"

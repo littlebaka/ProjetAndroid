@@ -3,38 +3,9 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     tools:context=".RestaurantActivity" >
-    
-    <FrameLayout
-        android:id="@+id/imgrestau"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
-        <TextView android:id="@+id/noterestau" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/note" android:textAppearance="?android:attr/textAppearanceSmall" android:textSize="20sp"/>
-        <RatingBar android:id="@+id/noteetoilerestau" style="@style/AppBaseTheme" android:layout_width="wrap_content" android:layout_height="wrap_content" android:numStars="5"/>
-        <RatingBar android:id="@+id/noteetoilerestau" style="@style/AppBaseTheme" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-    </FrameLayout>
-
-    <TextView
-        android:id="@+id/menurestau"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/imgrestau"
-        android:text="@string/menu"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="20sp" />
-
-    <ListView
-        android:id="@+id/menurestaudesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/menurestau"
-        android:layout_below="@+id/menurestau"
-        android:text=""
-        android:textSize="18sp" />
 
     <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -73,32 +44,90 @@
             android:background="@drawable/social" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/descrestau"
+    <ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/menurestaudesc"
-        android:layout_marginTop="16dp"
-        android:text="@string/description"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="20sp" />
+        android:layout_above="@+id/linearLayout1" >
 
-    <TextView
-        android:id="@+id/descrestaudesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/descrestau"
-        android:layout_below="@+id/descrestau" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="505dp"
+            android:paddingLeft="10dp" >
 
-    <TextView
-        android:id="@+id/textViewLocalisation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/descrestaudesc"
-        android:layout_below="@+id/descrestaudesc"
-        android:layout_marginTop="15dp"
-        android:text="@string/activity_restaurant" />
+            <FrameLayout
+                android:id="@+id/imgrestau"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" >
+            </FrameLayout>
 
+            <TextView
+                android:id="@+id/noterestau"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/imgrestau"
+                android:layout_marginTop="19dp"
+                android:text="@string/note"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20sp" />
+
+            <RatingBar
+                android:id="@+id/noteetoilerestau"
+                style="@style/AppBaseTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/noterestau"
+                android:numStars="5" />
+
+            <TextView
+                android:id="@+id/menurestau"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/noteetoilerestau"
+                android:text="@string/menu"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20sp" />
+
+            <ListView
+                android:id="@+id/menurestaudesc"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/menurestau" >
+            </ListView>
+
+            <TextView
+                android:id="@+id/descrestau"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/menurestaudesc"
+                android:layout_marginTop="12dp"
+                android:text="@string/description"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/descrestaudesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/descrestau" />
+
+            <TextView
+                android:id="@+id/textViewLocalisation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/descrestaudesc"
+                android:layout_marginTop="17dp"
+                android:text="@string/activity_restaurant" 
+				android:textSize="20sp" />
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>
