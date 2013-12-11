@@ -17,9 +17,9 @@ public class ShopActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_shop);
 		
-		ShopAsyncTask shopAsyncTask = new ShopAsyncTask(this,(TextView) findViewById(R.id.descboutdesc));
-
-
+		Intent intent = getIntent();
+		String idShop = intent.getStringExtra("idShop");
+		ShopAsyncTask shopAsyncTask = new ShopAsyncTask(this,this, idShop);
 		shopAsyncTask.execute();
 	}
 

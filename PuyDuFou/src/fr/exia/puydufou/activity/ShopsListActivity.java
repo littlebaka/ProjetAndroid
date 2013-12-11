@@ -2,6 +2,7 @@ package fr.exia.puydufou.activity;
 
 import fr.exia.puydufou.R;
 import fr.exia.puydufou.asynctask.ShopsListAsyncTask;
+import fr.exia.puydufou.core.ShopLoadable;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -10,7 +11,6 @@ import android.widget.ListView;
 import android.support.v4.app.NavUtils;
 
 public class ShopsListActivity extends Activity {
-
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
