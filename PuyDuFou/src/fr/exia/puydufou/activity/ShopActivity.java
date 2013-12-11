@@ -1,16 +1,26 @@
 package fr.exia.puydufou.activity;
 
 import fr.exia.puydufou.R;
+import fr.exia.puydufou.asynctask.ShopAsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.widget.TextView;
 
 public class ShopActivity extends Activity {
+
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_shop);
+		
+		ShopAsyncTask shopAsyncTask = new ShopAsyncTask(this,(TextView) findViewById(R.id.descboutdesc));
+
+
+		shopAsyncTask.execute();
 	}
 
 	@Override

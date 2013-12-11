@@ -41,20 +41,34 @@ public class MainAsyncTask extends AsyncTask<Object, String, Integer> {
 	protected Integer doInBackground(Object... params) {
 		
 		if(isOnline()){
-			publishProgress("10");
-			if(this.datasLoadable.isReachableWebservice())
-			{
-				
-			}
-			else
-			{
-				return 2;
-			}
-				while(true){
-				}
+			publishProgress("5");
+			this.datasLoadable.getAndStoreParcInformation(mainActivity.getContentResolver());
+			publishProgress("50");
+			this.datasLoadable.getAndStoreHoraireInformation(mainActivity.getContentResolver());
+			publishProgress("55");
+			this.datasLoadable.getAndStoreMenuInformation(mainActivity.getContentResolver());
+			publishProgress("60");
+			this.datasLoadable.getAndStoreServiceInformation(mainActivity.getContentResolver());
+			publishProgress("65");
+			this.datasLoadable.getAndStoreServiceMenuInformation(mainActivity.getContentResolver());
+			publishProgress("70");
+			this.datasLoadable.getAndStoreSpectacleInformation(mainActivity.getContentResolver());
+			publishProgress("75");
+			this.datasLoadable.getAndStoreSpectacleHoraireInformation(mainActivity.getContentResolver());
+			publishProgress("80");
+			this.datasLoadable.getAndStoreTypeServiceInformation(mainActivity.getContentResolver());
+			publishProgress("85");
+			this.datasLoadable.getAndStoreNoteServiceInformation(mainActivity.getContentResolver());
+			publishProgress("90");
+			this.datasLoadable.getAndStoreNoteSpectacleInformation(mainActivity.getContentResolver());
+			publishProgress("95");
+			this.datasLoadable.getAndStoreNoteInformation(mainActivity.getContentResolver());
+			publishProgress("100");
+			
 		}else{
 			return 1;
 		}
+		return 0;
 	}
 	
 	@Override
@@ -65,9 +79,6 @@ public class MainAsyncTask extends AsyncTask<Object, String, Integer> {
 		switch (result) {
 		case 1:
 			Toast.makeText(mainActivity, "Pas de connection internet.", Toast.LENGTH_LONG).show();
-			break;
-		case 2:
-			Toast.makeText(mainActivity, "Pas d'access au serveur distant.", Toast.LENGTH_LONG).show();
 			break;
 		default:
 			Toast.makeText(mainActivity, "Données vérifiées.", Toast.LENGTH_SHORT).show();

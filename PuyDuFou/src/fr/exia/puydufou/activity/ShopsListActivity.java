@@ -1,19 +1,24 @@
 package fr.exia.puydufou.activity;
 
 import fr.exia.puydufou.R;
+import fr.exia.puydufou.asynctask.ShopsListAsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.support.v4.app.NavUtils;
 
 public class ShopsListActivity extends Activity {
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_shop_list);
 		// Show the Up button in the action bar.
+		ShopsListAsyncTask shopsListAsyncTask = new ShopsListAsyncTask(this,(ListView)findViewById(R.id.listebout));
+		shopsListAsyncTask.execute();
 		setupActionBar();
 	}
 

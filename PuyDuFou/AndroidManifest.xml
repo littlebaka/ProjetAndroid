@@ -110,6 +110,52 @@
             android:name="fr.exia.puydufou.activity.PhotoActivity"
             android:label="@string/title_activity_photo" >
         </activity>
+        
+        <provider
+         android:name="fr.exia.puydufou.provider.ParcContentProvider"
+         android:authorities="fr.exia.puydufou.provider.parccontentprovider"
+        />
+        <provider
+         android:name="fr.exia.puydufou.provider.HoraireContentProvider"
+         android:authorities="fr.exia.puydufou.provider.horairecontentprovider"
+        />
+        <provider
+         android:name="fr.exia.puydufou.provider.MenuContentProvider"
+         android:authorities="fr.exia.puydufou.provider.menucontentprovider"
+        />
+        <provider
+         android:name="fr.exia.puydufou.provider.NoteContentProvider"
+         android:authorities="fr.exia.puydufou.provider.notecontentprovider"
+        />
+        <provider
+         android:name="fr.exia.puydufou.provider.NoteServiceContentProvider"
+         android:authorities="fr.exia.puydufou.provider.noteservicecontentprovider"
+        />
+        <provider
+         android:name="fr.exia.puydufou.provider.NoteSpectacleContentProvider"
+         android:authorities="fr.exia.puydufou.provider.notespectaclecontentprovider"
+        />
+        <provider
+         android:name="fr.exia.puydufou.provider.Service_MenuContentProvider"
+         android:authorities="fr.exia.puydufou.provider.service_menucontentprovider"
+        />
+        <provider
+         android:name="fr.exia.puydufou.provider.Spectacle_HoraireContentProvider"
+         android:authorities="fr.exia.puydufou.provider.spectacle_horairecontentprovider"
+        />
+        <provider
+         android:name="fr.exia.puydufou.provider.SpectacleContentProvider"
+         android:authorities="fr.exia.puydufou.provider.spectaclecontentprovider"
+        />
+        <provider
+         android:name="fr.exia.puydufou.provider.TypeServiceContentProvider"
+         android:authorities="fr.exia.puydufou.provider.typeservicecontentprovider"
+        />
+        <provider
+         android:name="fr.exia.puydufou.provider.ServiceContentProvider"
+         android:authorities="fr.exia.puydufou.provider.servicecontentprovider"
+        />
+        
     </application>
 
 </manifest>
