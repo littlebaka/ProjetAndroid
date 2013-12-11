@@ -68,11 +68,18 @@
         android:background="@drawable/map" />
 
         <Button
-        android:id="@+id/button_social" 
+        android:id="@+id/button_share_social" 
         android:layout_width="0dip"
         android:layout_height="match_parent"
         android:layout_weight="1" 
         android:background="@drawable/social" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button_wait_list"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="List Attente" />
     
 </LinearLayout>

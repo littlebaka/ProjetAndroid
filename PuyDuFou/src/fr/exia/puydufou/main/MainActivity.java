@@ -14,6 +14,7 @@ import fr.exia.puydufou.activity.RestaurantsListActivity;
 import fr.exia.puydufou.activity.ShopsListActivity;
 import fr.exia.puydufou.activity.ShowsListActivity;
 import fr.exia.puydufou.activity.SocialActivity;
+import fr.exia.puydufou.activity.WaitingListActivity;
 import fr.exia.puydufou.asynctask.MainAsyncTask;
 
 public class MainActivity extends Activity {
@@ -24,6 +25,7 @@ public class MainActivity extends Activity {
 	private Button button_restaurant;
 	private Button button_map;
 	private Button button_social;
+	private Button button_wait_list;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +82,7 @@ public class MainActivity extends Activity {
 			}
 		});
         
-        this.button_social = (Button)findViewById(R.id.button_social);
+        this.button_social = (Button)findViewById(R.id.button_share_social);
         this.button_social.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -89,6 +91,17 @@ public class MainActivity extends Activity {
 				startActivity(intent_social);
 			}
 		});
+        
+        this.button_wait_list = (Button)findViewById(R.id.button_wait_list);
+        this.button_wait_list.setOnClickListener(new OnClickListener() 
+        {
+        	@Override
+        	public void onClick(View v)
+        	{
+        		Intent intent_wait_list = new Intent(MainActivity.this, WaitingListActivity.class);
+        		startActivity(intent_wait_list);
+        	}
+        });
         
         MainAsyncTask mainAsyncTask = new MainAsyncTask(MainActivity.this);
         mainAsyncTask.execute();
