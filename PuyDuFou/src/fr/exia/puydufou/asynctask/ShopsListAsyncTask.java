@@ -23,9 +23,7 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 public class ShopsListAsyncTask extends AsyncTask<String, String, ListAdapter> {
-	 private final String EXTRA_TITLE = "title_show";
-	 private final String EXTRA_INFO = "info_show";
-	 private final String EXTRA_EVEN = "event_hist";
+
 	private List<Map<String, String>> shop;
 	private ListView listView;
 	private Context context;

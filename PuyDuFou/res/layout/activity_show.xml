@@ -141,6 +141,23 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/descspec" />
+
+            <TextView
+                android:id="@+id/activity_show_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/descspecdesc"
+                android:layout_alignLeft="@+id/descspecdesc"
+                android:text="@string/activity_show_event" />
+
+            <TextView
+                android:id="@+id/activity_show_eventValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/descspec"
+                android:layout_toRightOf="@+id/noteetoilespec"
+                android:text="TextView" />
+
         </RelativeLayout>
     </ScrollView>
 
