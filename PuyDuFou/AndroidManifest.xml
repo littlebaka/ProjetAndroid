@@ -110,6 +110,14 @@
             android:name="fr.exia.puydufou.activity.PhotoActivity"
             android:label="@string/title_activity_photo" >
         </activity>
+        <activity
+            android:name="fr.exia.puydufou.activity.WaitingActivity"
+            android:label="@string/title_activity_waiting" >
+        </activity>
+        <activity
+            android:name="fr.exia.puydufou.activity.WaitingListActivity"
+            android:label="@string/title_activity_waitinglist" >
+        </activity>
         
         <provider
          android:name="fr.exia.puydufou.provider.ParcContentProvider"

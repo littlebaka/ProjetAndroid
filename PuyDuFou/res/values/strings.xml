@@ -15,6 +15,8 @@
     <string name="title_activity_restaurant">Information restaurant</string>
     <string name="title_activity_social">SocialActivity</string>
     <string name="title_activity_photo">PhotoActivity</string>
+    <string name="title_activity_waiting">WaitingActivity</string>
+    <string name="title_activity_waitinglist">WaitingListActivity</string>
     <string name="note">Note :</string>
     <string name="menu">Menu et tarifs :</string>
     <string name="description">Description :</string>
