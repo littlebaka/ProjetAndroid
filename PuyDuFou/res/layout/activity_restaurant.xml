@@ -47,7 +47,7 @@
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="505dp"
         android:layout_above="@+id/linearLayout1" >
 
         <RelativeLayout
@@ -126,6 +126,15 @@
                 android:layout_marginTop="17dp"
                 android:text="@string/activity_restaurant" 
 				android:textSize="20sp" />
+
+            <fragment
+                android:id="@+id/fragment1"
+                android:name="com.google.android.gms.maps.MapFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_below="@+id/textViewLocalisation"
+                android:layout_centerHorizontal="true" />
+
         </RelativeLayout>
 
     </ScrollView>
