@@ -10,6 +10,8 @@
         android:layout_height="80dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true" >
+
+
     </FrameLayout>
 
     <TextView
@@ -30,34 +32,6 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/notebout"
         android:numStars="5" />
-
-    <TextView
-        android:id="@+id/menubout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/noteetoilebout"
-        android:text="@string/menu"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/menuboutdesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/menubout"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/descbout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/menuboutdesc"
-        android:text="@string/description"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/descboutdesc"
@@ -104,5 +78,26 @@
             android:layout_height="wrap_content"
             android:background="@drawable/social" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/activity_shop_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/notebout"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="44dp"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/descbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="19dp"
+        android:layout_toRightOf="@+id/descboutdesc"
+        android:text="@string/description"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20sp" />
 
 </RelativeLayout>
