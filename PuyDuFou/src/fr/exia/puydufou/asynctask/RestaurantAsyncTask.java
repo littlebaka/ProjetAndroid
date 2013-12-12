@@ -6,62 +6,80 @@ import java.util.List;
 import java.util.Map;
 
 import fr.exia.puydufou.R;
+import fr.exia.puydufou.core.RestaurantLoable;
+import fr.exia.puydufou.core.RestaurantLoader;
+import fr.exia.puydufou.core.ShopLoadable;
+import fr.exia.puydufou.core.ShopLoader;
 
+import android.app.Activity;
 import android.content.Context;
+import android.database.Cursor;
 import android.os.AsyncTask;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-public class RestaurantAsyncTask extends AsyncTask<String, String, String> {
+public class RestaurantAsyncTask extends AsyncTask<String, String, ListAdapter> {
 	private List<Map<String, String>> menu;
-	private ListView listView;
+	//private ListView listView;
+	private Activity view;
 	private Context context;
-	private TextView textViewDescription;
+	private String idRestaurant;
+	
+	private RestaurantLoable restaurantLoable;
+	
+	
+	private String restaurantDescription;
 
-	public RestaurantAsyncTask(Context context,ListView listView, TextView textViewDescription){
+	public RestaurantAsyncTask(Context context,Activity view, String idRestaurant){
 		this.context = context;
-		this.listView = listView;
-		this.textViewDescription = textViewDescription;
+		//this.listView = listView;
+		this.view = view;
+		this.idRestaurant = idRestaurant;
 	}
 	
 	@Override
-	protected String doInBackground(String... params) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@Override
-	protected void onPostExecute(String result) {
+	protected ListAdapter doInBackground(String... params) {
 		menu = new ArrayList<Map<String, String>>();
+		this.restaurantLoable = new RestaurantLoader(context);
+		Cursor cursor = this.restaurantLoable.getRestaurantById(idRestaurant);
 		
-		String menuRestaurant= "Menu enfant";
-		String menuPrice = "50 euros";
+		while(cursor.moveToNext()){
 		
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("menuRestaurant", menuRestaurant);
-		map.put("menuPrice", menuPrice);
-		
-		menuRestaurant = "Menu Adulte";
-		menuPrice = "60 euros";
-		
-		HashMap<String, String> map2 = new HashMap<String, String>();
-		map2.put("menuRestaurant", menuRestaurant);
-		map2.put("menuPrice", menuPrice);
-		
-		menu.add(map);
-		menu.add(map2);
+			this.restaurantDescription = cursor.getString(0);
+			
+		}
+		Cursor cursorServiceMenu = this.restaurantLoable.getMenuServiceById(idRestaurant);
+		if( cursorServiceMenu != null && cursorServiceMenu.moveToFirst() ){
+			while(cursorServiceMenu.moveToNext()){
+				Cursor cursorMenu = this.restaurantLoable.getMenuById(cursorServiceMenu.getString(0));
+				while(cursorMenu.moveToNext())
+				{
+					HashMap<String, String> map = new HashMap<String, String>();
+					map.put("nameMenu", cursor.getString(0));
+					map.put("priceMenu", cursor.getString(1));
+					map.put("descriptionMenu", cursor.getString(2));
+					menu.add(map);
+				}
+			}
+		}
 		
 		ListAdapter adapter = new SimpleAdapter(context,
-				menu, R.layout.show_list_item, new String[] { "menuRestaurant", "menuPrice" },
-				new int[] { R.id.show_name,  R.id.show_duration });
+				menu, R.layout.show_list_item, new String[] { "nameMenu","priceMenu","descriptionMenu" },
+				new int[] { R.id.show_name, R.id.show_duration, R.id.show_schedule });
 		
-		listView.setAdapter(adapter);
+		return adapter;
+	}
+	
+	@Override
+	protected void onPostExecute(ListAdapter result) {
+
+		((ListView) view.findViewById(R.id.menurestaudesc)).setAdapter(result);
+
 		
-		String menuDescription ="Le menu enfant comporte des dhfudfhduhfifi et des crocette";
-		textViewDescription.setText(menuDescription);
-		super.onPostExecute(result);
+		((TextView) view.findViewById(R.id.descrestaudesc)).setText(this.restaurantDescription);
+	
 	}
 
 }

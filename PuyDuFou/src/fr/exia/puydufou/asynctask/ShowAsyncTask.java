@@ -24,10 +24,10 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-public class ShowAsyncTask extends AsyncTask<String, String, String> {
+public class ShowAsyncTask extends AsyncTask<String, String, ListAdapter> {
 
 	
-	private List<String> schedule;
+	private List<Map<String, String>> schedule;
 	private ListView listView;
 	
 	private HorizontalScrollView horizontalScrollView;
@@ -36,12 +36,13 @@ public class ShowAsyncTask extends AsyncTask<String, String, String> {
 	private Activity view;
 	private String idShow;
 	
-
+	private List<Map<String, String>> show;
 	private String showDate;
-	private String showSchedule;
+	private String showTiming;
 	private String showActors;
 	private String showDescription;
 	private String showEvent;
+	private String showSchedule;
 	
 	private ShowLoadable showLoadable;
 
@@ -55,47 +56,36 @@ public class ShowAsyncTask extends AsyncTask<String, String, String> {
 	}
 
 	@Override
-	protected String doInBackground(String... params) {
+	protected ListAdapter doInBackground(String... params) {
 
+		show = new ArrayList<Map<String, String>>();
 		this.showLoadable = new ShowLoader(context);
 		Cursor cursor = this.showLoadable.getShowById(idShow);
 		
 		while(cursor.moveToNext()){
 			this.showDate = cursor.getString(0);
 			this.showActors = cursor.getString(1)+ " acteurs";
-			this.showSchedule = cursor.getString(2) + " min";
+			this.showTiming = cursor.getString(2) + " min";
 			this.showDescription = cursor.getString(3);
 			this.showEvent = cursor.getString(4);
+			HashMap<String, String> map = new HashMap<String, String>();
+			map.put("showSchedule", cursor.getString(1));
 		}
 		
-		return null;
+		ListAdapter adapter = new SimpleAdapter(context,
+				show, R.layout.show_list_item, new String[] { "showSchedule" },
+				new int[] { R.id.show_name });
+		return adapter;
 	}
 	@Override
-	protected void onPostExecute(String result) {
-//		schedule = new ArrayList<String>();
-//		schedule.add("10h30");
-//		schedule.add("10h50");
-//		schedule.add("10h50");
-//		schedule.add("10h50");
-//		schedule.add("10h50");
-//		schedule.add("10h50");
-//		schedule.add("10h50");
-//		schedule.add("10h50");
-//		schedule.add("10h50");
-//		schedule.add("10h50");
-//	
-//		
-//		LinearLayout linearLayout = new LinearLayout(context);
-//		
-//		for (String s : schedule) {
-//			TextView textView = new TextView(context);
-//			textView.setText(s);
-//			linearLayout.addView(textView);
-//
-//		}
-	//	horizontalScrollView.addView(linearLayout);
+	protected void onPostExecute(ListAdapter result) {
+	
+		
+		listView.setAdapter(result);
+		
+		
 		((TextView)view.findViewById(R.id.ddcspecddc)).setText(this.showDate);
-		((TextView)view.findViewById(R.id.dureenb)).setText(this.showSchedule);
+		((TextView)view.findViewById(R.id.dureenb)).setText(this.showTiming);
 		((TextView)view.findViewById(R.id.actspecnb)).setText(this.showActors);
 		((TextView)view.findViewById(R.id.descspecdesc)).setText(this.showDescription);
 		((TextView)view.findViewById(R.id.activity_show_eventValue)).setText(this.showEvent);

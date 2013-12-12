@@ -1,5 +1,6 @@
 package fr.exia.puydufou.provider;
 
+import fr.exia.puydufou.provider.SharedInformation.Service_Menu;
 import android.content.ContentProvider;
 import android.content.ContentUris;
 import android.content.ContentValues;
@@ -74,18 +75,17 @@ public class Service_MenuContentProvider extends ContentProvider {
 		@Override
 		public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs,
 				String setOrder) {
-			/*long id = this.getId(uri);
+			long id = this.getId(uri);
 			SQLiteDatabase db = this.dbHelper.getReadableDatabase();
 			
-			if(id < 0)
+			if(id > 0)
 			{
-				return db.query(CONTENT_PROVIDER_TABLE_NAME, projection, selection, selectionArgs, null, null, setOrder);
+				return db.query(DataBaseHelper.CONTENT_PROVIDER_TABLE_NAME_SERVICE_MENU, projection, selection, selectionArgs, null, null, setOrder);
 			}
 			else
 			{
-				return db.query(CONTENT_PROVIDER_TABLE_NAME, projection, Service_Menu.ID_PARC + "=" + id, null, null, null, null);
-			}*/
-			return null;
+				return db.query(DataBaseHelper.CONTENT_PROVIDER_TABLE_NAME_SERVICE_MENU, projection, Service_Menu.ID_SERVICE + "=" + id, null, null, null, null);
+			}
 		}
 
 
@@ -110,7 +110,7 @@ public class Service_MenuContentProvider extends ContentProvider {
 			}*/
 			return 0;
 		}
-		/*
+		
 		private long getId(Uri uri){
 			String lastPathSegment = uri.getLastPathSegment();
 			if(lastPathSegment != null)
@@ -124,5 +124,5 @@ public class Service_MenuContentProvider extends ContentProvider {
 			}
 			return -1;
 		}
-		*/
+		
 }

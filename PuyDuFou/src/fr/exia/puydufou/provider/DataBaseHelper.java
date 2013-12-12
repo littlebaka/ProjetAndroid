@@ -39,6 +39,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
+		//db.execSQL("PRAGMA foreign_keys=ON;");
+		
 		db.execSQL("CREATE TABLE "
 				+ CONTENT_PROVIDER_TABLE_NAME_SERVICE 
 				+ "(" 
@@ -127,8 +129,16 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 				+ CONTENT_PROVIDER_TABLE_NAME_SERVICE_MENU 
 				+ "(" 
 				+ Service_Menu.ID_MENU + " NUMERIC, "
-				+ Service_Menu.ID_SERVICE + " NUMERIC"
+				+ Service_Menu.ID_SERVICE + " NUMERIC "
+				//+ "FOREIGN KEY("+ Service_Menu.ID_SERVICE +") REFERENCES "+CONTENT_PROVIDER_TABLE_NAME_SERVICE+"("+Service.ID_SERVICE+"), "
+				//+ "FOREIGN KEY("+ Service_Menu.ID_MENU +") REFERENCES "+CONTENT_PROVIDER_TABLE_NAME_MENU+"("+Menu.ID_MENU+")"
 				+ ");");
+		/*
+		db.execSQL("ALTER TABLE "
+				+ CONTENT_PROVIDER_TABLE_NAME_SERVICE_MENU
+				+ " FOREIGN KEY("+ Service_Menu.ID_SERVICE +") REFERENCES "+CONTENT_PROVIDER_TABLE_NAME_SERVICE+"("+Service.ID_SERVICE+"),"
+				+ " FOREIGN KEY("+ Service_Menu.ID_MENU +") REFERENCES "+CONTENT_PROVIDER_TABLE_NAME_MENU+"("+Menu.ID_MENU+");"
+				);*/
 	}
 
 	@Override

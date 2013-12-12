@@ -4,6 +4,7 @@ import fr.exia.puydufou.R;
 import fr.exia.puydufou.asynctask.RestaurantAsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -15,7 +16,9 @@ public class RestaurantActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_restaurant);
 		
-		RestaurantAsyncTask restaurantAsyncTask = new RestaurantAsyncTask(this,(ListView) findViewById(R.id.menurestaudesc), (TextView)findViewById(R.id.descrestaudesc));
+		Intent intent = getIntent();
+		String idRestaurant = intent.getStringExtra("idRestaurant");
+		RestaurantAsyncTask restaurantAsyncTask = new RestaurantAsyncTask(this,this, idRestaurant);
 		restaurantAsyncTask.execute();
 	}
 
