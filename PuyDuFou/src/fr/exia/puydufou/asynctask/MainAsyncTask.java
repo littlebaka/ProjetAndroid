@@ -43,6 +43,7 @@ public class MainAsyncTask extends AsyncTask<Object, String, Integer> {
 		if(isOnline()){
 			publishProgress("5");
 			try{
+
 			this.datasLoadable.getAndStoreParcInformation(mainActivity.getContentResolver());
 			publishProgress("50");
 			this.datasLoadable.getAndStoreHoraireInformation(mainActivity.getContentResolver());
@@ -65,6 +66,7 @@ public class MainAsyncTask extends AsyncTask<Object, String, Integer> {
 			publishProgress("95");
 			this.datasLoadable.getAndStoreNoteInformation(mainActivity.getContentResolver());
 			publishProgress("100");
+
 			}catch(Exception e){
 				e.printStackTrace();
 			}

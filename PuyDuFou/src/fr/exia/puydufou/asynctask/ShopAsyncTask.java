@@ -53,7 +53,7 @@ public class ShopAsyncTask extends AsyncTask<String, String, String> {
 	protected void onPostExecute(String result) {
 		
 		((TextView) view.findViewById(R.id.descboutdesc)).setText(this.shopDescription);
-		((TextView) view.findViewById(R.id.activity_shop_title)).setText(this.shopName);
+	//	((TextView) view.findViewById(R.id.activity_shop_title)).setText(this.shopName);
 		
 		
 		//String shopDescription = "L'amour brille sous les étoile AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
