@@ -49,7 +49,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 				+ Service.ID_PARC + " NUMERIC, "
 				+ Service.NOM_SERVICE + " TEXT, "
 				+ Service.INFORMATION + " TEXT, "
-				+ Service.LOCALISATION + " TEXT"
+				+ Service.LONGITUDE + " TEXT, "
+				+ Service.LATITUDE + " TEXT"
 				+ ");");
 		
 		db.execSQL("CREATE TABLE "
@@ -69,7 +70,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 				+ Spectacle.NB_ACTEUR + " NUMERIC, "
 				+ Spectacle.EVEN_HIST + " TEXT, "
 				+ Spectacle.INFORMATION_SPECTACLE + " TEXT, "
-				+ Spectacle.NOM_SPECTACLE + " TEXT"
+				+ Spectacle.NOM_SPECTACLE + " TEXT, "
+				+ Spectacle.LONGITUDE + " TEXT, "
+				+ Spectacle.LATITUDE + " TEXT"
 				+ ");");
 		
 		db.execSQL("CREATE TABLE "

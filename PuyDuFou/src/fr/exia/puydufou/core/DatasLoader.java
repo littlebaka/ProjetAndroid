@@ -139,7 +139,8 @@ public class DatasLoader implements DatasLoadable {
 				menu.put(Service.ID_PARC, p.getString(Service.ID_PARC));
 				menu.put(Service.NOM_SERVICE, p.getString(Service.NOM_SERVICE));
 				menu.put(Service.INFORMATION, p.getString(Service.INFORMATION));
-				menu.put(Service.LOCALISATION, p.getString(Service.LOCALISATION));
+				menu.put(Service.LONGITUDE, p.getString(Service.LONGITUDE));
+				menu.put(Service.LATITUDE, p.getString(Service.LATITUDE));
 				contentResolver.insert(ServiceContentProvider.CONTENT_URI, menu);
 			}
 			
@@ -188,6 +189,8 @@ public class DatasLoader implements DatasLoadable {
 				spectacle.put(Spectacle.EVEN_HIST, p.getString(Spectacle.EVEN_HIST));
 				spectacle.put(Spectacle.INFORMATION_SPECTACLE, p.getString(Spectacle.INFORMATION_SPECTACLE));
 				spectacle.put(Spectacle.NOM_SPECTACLE, p.getString(Spectacle.NOM_SPECTACLE));
+				spectacle.put(Spectacle.LONGITUDE, p.getString(Spectacle.LONGITUDE));
+				spectacle.put(Spectacle.LATITUDE, p.getString(Spectacle.LATITUDE));
 				contentResolver.insert(SpectacleContentProvider.CONTENT_URI, spectacle);
 			}
 			

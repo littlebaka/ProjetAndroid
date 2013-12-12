@@ -39,7 +39,9 @@ public class SharedInformation {
 		public static final String ID_PARC = "ID_PARC";
 		public static final String NOM_SERVICE = "NOM_SERVICE";
 		public static final String INFORMATION = "INFORMATION";
-		public static final String LOCALISATION = "LOCALISATION";
+		public static final String LONGITUDE = "LONGITUDE";
+		public static final String LATITUDE = "LATITUDE";
+		
 	}
 	
 	public static final class Service_Menu implements BaseColumns{
@@ -60,6 +62,8 @@ public class SharedInformation {
 		public static final String EVEN_HIST = "EVEN_HIST";
 		public static final String INFORMATION_SPECTACLE = "INFORMATION_SPECTACLE";
 		public static final String NOM_SPECTACLE = "NOM_SPECTACLE";
+		public static final String LONGITUDE = "LONGITUDE";
+		public static final String LATITUDE = "LATITUDE";
 	}
 	
 	public static final class Spectacle_Horaire implements BaseColumns{

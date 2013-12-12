@@ -28,7 +28,7 @@ public class ShopLoader implements ShopLoadable {
 
 	@Override
 	public Cursor getBoutiqueById(String id) {
-		String projection[] = new String[] {Service.NOM_SERVICE, Service.INFORMATION , Service.LOCALISATION};
+		String projection[] = new String[] {Service.NOM_SERVICE, Service.INFORMATION };
 		String selection = Service.ID_SERVICE + " = " + id;
 		Cursor cursor = this.context.getContentResolver().query(ServiceContentProvider.CONTENT_URI,
 				projection,
